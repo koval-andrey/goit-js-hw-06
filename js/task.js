@@ -86,12 +86,16 @@ const getNamesSortedByFriendsCount = users =>
 
 console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
-/*Задание 10
-Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
+/*Задание 10*
+Получить массив всех умений всех пользователей (поле skills), 
+при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.*/
 
-const getSortedUniqueSkills = users => {
+const getSortedUniqueSkills = users => 
   // твой код
-};
+  users
+  .flatMap(user => user.skills)
+  .filter((user, index, users) => {return users.indexOf(user) === index})
+  .sort();
 
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud'*/
